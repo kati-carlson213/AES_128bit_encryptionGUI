@@ -282,7 +282,7 @@ class GUI {
 
     //GUI method that's called in main method
     private void prepareGUI() {
-        mainFrame = new Frame("AES Encryption and Decryption");
+        mainFrame = new Frame("AES 128-bit Encryption and Decryption");
         mainFrame.setSize(800, 400);
 
         mainFrame.setLayout(new BorderLayout());
@@ -580,6 +580,7 @@ class GUI {
                 }
                 else {
                     errorStatus = false;
+                    inputIV = inputIV.substring(0, 16);
 
                     performAES(getText(), getKey(), getMode(), inputIV);
 
